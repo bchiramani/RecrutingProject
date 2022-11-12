@@ -1,0 +1,44 @@
+<div class="card hovercard">
+    <div class="card-body">
+        <div [ngStyle]="{'font-family': font, 'font-size':fontsize,'color':color}">
+            <h1> My Text </h1>
+            <p>
+                {{text1}}
+            </p>
+        </div>
+        <form (focusout)="applyStyle()">
+            <label for="nom" class="form-label">Text</label>
+            <input type="text" class="form-control" id="text" placeholder="text" [(ngModel)]="text1" [ngModelOptions]="{standalone: true}">
+
+
+            <label for="nom" class="form-label">Color</label>
+            <input type="color" class="form-control" id="color" placeholder="color" [(ngModel)]="color" [ngModelOptions]="{standalone: true}">
+
+            <label for="size" class="form-label">Size</label>
+            <input type="number" class="form-control" id="size" placeholder="size" [(ngModel)]="size" [ngModelOptions]="{standalone: true}">
+
+            <label for="size" class="form-label">Font </label><br>
+            <select (change)="selectChangeHandler($event)">
+                <option value="arial">Arial </option> 
+                <option value="Times New Roman">Times New Roman</option> 
+                <option value="Georgia"> Georgia</option> 
+                <option value="cursive"> Cursive</option> 
+                <option value="fangsong">Fangsong </option> 
+
+            </select>
+        </form>
+
+    </div>
+</div>
+
+<div class="card hovercard" [ngStyle]="{'color':textColor,'border-color':textColor}">
+    <div class="card-body">
+        <div>
+            <h1> Rainbow </h1>
+
+
+            <input appRainbow type="text" class="form-control" id="text" placeholder="enter your text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+
+        </div>
+    </div>
+</div>

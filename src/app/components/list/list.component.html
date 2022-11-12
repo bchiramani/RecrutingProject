@@ -1,0 +1,11 @@
+<!-- <div class="col-lg-4 col-sm-4"> -->
+<ul>
+    <li *ngFor="let cvi of listCvs">
+        <a (click)="sendToCv()">
+            <app-item [cv]="cvi" (itemEvent)="receiveFromItem($event)"></app-item>
+        </a>
+    </li>
+</ul>
+
+
+<!-- </div> -->
