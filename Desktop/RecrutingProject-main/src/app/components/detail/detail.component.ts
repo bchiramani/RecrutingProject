@@ -10,14 +10,15 @@ import Swal from 'sweetalert2'
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  @Input() cvToDisplay:User= {id: 0, nom: 'Nom',prenom:'Prenom',job :'Job',image :"/assets/images/default.png",description:"job description", motsCles:"mots cles",citation: "citation"};
-
+  @Input() cvToDisplay:User
   //const Swal = require('sweetalert2')
   constructor(private cvService:CvService,private cvEmbauchesService:CvEmbauchesService,private toastr: ToastrService) {
     
    }
 
   ngOnInit() {
+    this.cvToDisplay= {id: 0, nom: 'Nom',prenom:'Prenom',job :'Job',image :"/assets/images/default.png",description:"job description", motsCles:"mots cles",citation: "citation"};
+  
   }
   embaucher(){
     //console.log(this.cvToDisplay)
