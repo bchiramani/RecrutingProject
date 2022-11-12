@@ -17,12 +17,19 @@ export class DetailComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.cvToDisplay= {id: 0, nom: 'Nom',prenom:'Prenom',job :'Job',image :"/assets/images/default.png",description:"job description", motsCles:"mots cles",citation: "citation"};
+    
   
   }
   embaucher(){
     //console.log(this.cvToDisplay)
-    this.cvEmbauchesService.addCvEmbauche(this.cvToDisplay)
+    if (this.cvEmbauchesService.getCvEmbauche(this.cvToDisplay)){
+      this.toastr.error("Vous avez deja embaucher cet utilisateur",'Deja embauché')
+
+    }else{
+      this.cvEmbauchesService.addCvEmbauche(this.cvToDisplay)
+      this.toastr.success("Vous avez embaucher cet utilisateur",'Embauché')
+
+    }
     //this.cvService.deleteCv(this.cvToDisplay)
     // Swal.fire({
     //   title: 'Embauché',
@@ -30,8 +37,6 @@ export class DetailComponent implements OnInit {
     //   icon: 'success',
     //   confirmButtonText: 'Cool'
     // })
-    this.toastr.success("Vous avez embaucher cet utilisateur",'Embaucher')
-    
   }
 
 

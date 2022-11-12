@@ -3,7 +3,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="col-lg-8 col-sm-8">
+<div class="col-lg-8 col-sm-8" *ngIf="cvToDisplay !=null">
     <div class="card hovercard">
         <div class="card-background">
             <img class="card-bkimg" alt="" [src]="cvToDisplay?.image">
