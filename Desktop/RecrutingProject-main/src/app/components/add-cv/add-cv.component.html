@@ -1,0 +1,15 @@
+<div class="container">
+    <h1> Add a CV</h1>
+    <app-form-cv (addCvEvent)="receiveUser($event)"></app-form-cv>
+    <app-detail [cvToDisplay]="user"></app-detail>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <app-cv></app-cv>
+        </div>
+        <div class="col-3">
+            <app-cv-embauches></app-cv-embauches>
+        </div>
+    </div>
+</div>

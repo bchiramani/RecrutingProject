@@ -1,0 +1,32 @@
+<div class="col-lg-4 col-sm-4">
+    <div class="card hovercard">
+        <div class="card-body">
+
+            <form (keyup)="getUser(user)">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="nom" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="prenom" placeholder="prenom" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+
+                <label for="job" class="form-label">Job</label>
+                <input type="text" class="form-control" id="job" placeholder="job" [(ngModel)]="user.job" [ngModelOptions]="{standalone: true}">
+
+                <label for="image" class="form-label">Image</label>
+                <input type="file" (change)="readUrl($event)" class="form-control" id="image" placeholder="" [(ngModel)]="user.image" [ngModelOptions]="{standalone: true}">
+
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="description" [(ngModel)]="user.description" [ngModelOptions]="{standalone: true}">
+
+                <label for="motsCles" class="form-label">Mots Cles</label>
+                <input type="text" class="form-control" id="motsCles" placeholder="motsCles" [(ngModel)]="user.motsCles" [ngModelOptions]="{standalone: true}">
+
+                <label for="citation" class="form-label">Citation</label>
+                <input type="text" class="form-control" id="citation" placeholder="citation" [(ngModel)]="user.citation" [ngModelOptions]="{standalone: true}">
+                <button type="button" class="btn btn-primary" (click)="addCv(user)">Add Cv</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
