@@ -7,7 +7,7 @@
         <app-list [listCvs]="cvs" (listEvent)="receiveFromList($event)"></app-list>
 
     </div>
-    <div>
+    <div *ngIf="cvToDisplay !=null">
         <app-detail [cvToDisplay]="cvToDisplay"></app-detail>
 
     </div>

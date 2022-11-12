@@ -9,10 +9,11 @@ import { CvService } from 'src/app/services/cv.service';
 })
 export class CvComponent implements OnInit {
   public cvs:Array<User> ;
-  cvToDisplay:User;
+  cvToDisplay:User
   constructor(private cvService:CvService) { }
 
   ngOnInit() {
+    this.cvToDisplay=null;
     this.cvs=this.cvService.getAllCvs()
   }
   receiveFromList(item: User) {

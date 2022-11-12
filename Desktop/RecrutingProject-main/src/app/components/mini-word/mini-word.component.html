@@ -35,12 +35,10 @@
     <div class="card-body">
         <div>
             <h1> Rainbow </h1>
-            <h3>
-                {{text}}
-            </h3>
-            <form (keyup)="rainbow()">
-                <input type="text" class="form-control" id="text" placeholder="enter your text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
-            </form>
+
+
+            <input appRainbow type="text" class="form-control" id="text" placeholder="enter your text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
+
         </div>
     </div>
 </div>
