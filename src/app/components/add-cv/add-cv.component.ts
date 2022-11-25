@@ -20,6 +20,8 @@ export class AddCvComponent implements OnInit {
   receiveUser(user : User){
     this.user = user
   }
+
+  
  
 
 }

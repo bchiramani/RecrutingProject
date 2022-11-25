@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user.model';
 import { CvEmbauchesService } from 'src/app/services/cv-embauches.service';
@@ -12,7 +13,7 @@ import Swal from 'sweetalert2'
 export class DetailComponent implements OnInit {
   @Input() cvToDisplay:User
   //const Swal = require('sweetalert2')
-  constructor(private cvService:CvService,private cvEmbauchesService:CvEmbauchesService,private toastr: ToastrService) {
+  constructor(private router:Router,cvService:CvService,private cvEmbauchesService:CvEmbauchesService,private toastr: ToastrService) {
     
    }
 
@@ -37,6 +38,12 @@ export class DetailComponent implements OnInit {
     //   icon: 'success',
     //   confirmButtonText: 'Cool'
     // })
+
+   
+  }
+  viewDetails(){
+    console.log(this.cvToDisplay.id)
+    this.router.navigate(['detail',this.cvToDisplay.id])
   }
 
 

@@ -1,13 +1,11 @@
 <div class="">
-    <h1>CVs</h1>
-
     <div class="col-lg-4 col-sm-4">
 
         <a> </a>
         <app-list [listCvs]="cvs" (listEvent)="receiveFromList($event)"></app-list>
 
     </div>
-    <div *ngIf="cvToDisplay !=null">
+    <div>
         <app-detail [cvToDisplay]="cvToDisplay"></app-detail>
 
     </div>

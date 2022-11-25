@@ -18,6 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { RainbowDirective } from './components/rainbow.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ViewCvsComponent } from './components/view-cvs/view-cvs.component';
+import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
+import { CvDetailPageComponent } from './components/cv-detail-page/cv-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { RainbowDirective } from './components/rainbow.directive';
     MiniWordComponent,
     DefaultImagePipe,
     CvEmbauchesComponent,
-    RainbowDirective
+    RainbowDirective,
+    NavbarComponent,
+    ViewCvsComponent,
+    RouterSimulatorComponent,
+    CvDetailPageComponent
   ],
   imports: [
     BrowserModule,

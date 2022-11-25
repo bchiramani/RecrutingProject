@@ -28,4 +28,11 @@ export class CvService {
     let index=this.cvs.indexOf(cvToDelete)
     this.cvs.splice(index,1)
   }
+  getCvById(id:number){
+    let user:User
+    user= this.cvs.find(user =>user.id==id)
+    console.log("user at service ",user)
+
+    return user
+  }
 }
