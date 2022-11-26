@@ -1,29 +1,29 @@
-<div class="col-lg-4 col-sm-4">
+<div>
     <div class="card hovercard">
         <div class="card-body">
 
-            <form (keyup)="getUser(user)">
+            <form [formGroup]="addCvForm">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" placeholder="nom" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="nom" placeholder="nom" formControlName="nom">
 
                 <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="prenom" placeholder="prenom" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="prenom" placeholder="prenom" formControlName="prenom">
 
                 <label for="job" class="form-label">Job</label>
-                <input type="text" class="form-control" id="job" placeholder="job" [(ngModel)]="user.job" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="job" placeholder="job" [(ngModel)]="user.job" formControlName="job">
 
                 <label for="image" class="form-label">Image</label>
-                <input type="file" (change)="readUrl($event)" class="form-control" id="image" placeholder="" [(ngModel)]="user.image" [ngModelOptions]="{standalone: true}">
+                <input type="file" (change)="readUrl($event)" class="form-control" id="image" ormControlName="image" placeholder="" formControlName="image">
 
                 <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="description" placeholder="description" [(ngModel)]="user.description" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="description" placeholder="description" formControlName="description">
 
                 <label for="motsCles" class="form-label">Mots Cles</label>
-                <input type="text" class="form-control" id="motsCles" placeholder="motsCles" [(ngModel)]="user.motsCles" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="motsCles" placeholder="motsCles" formControlName="motsCles">
 
                 <label for="citation" class="form-label">Citation</label>
-                <input type="text" class="form-control" id="citation" placeholder="citation" [(ngModel)]="user.citation" [ngModelOptions]="{standalone: true}">
-                <button type="button" class="btn btn-primary" (click)="addCv(user)">Add Cv</button>
+                <input type="text" class="form-control" id="citation" placeholder="citation" formControlName="citations">
+                <button type="button" class="btn btn-primary" (click)="addCv()">Add Cv</button>
             </form>
 
 

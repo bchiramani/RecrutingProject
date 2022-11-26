@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -22,6 +21,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ViewCvsComponent } from './components/view-cvs/view-cvs.component';
 import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
 import { CvDetailPageComponent } from './components/cv-detail-page/cv-detail-page.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CvDetailPageComponent } from './components/cv-detail-page/cv-detail-pag
     NavbarComponent,
     ViewCvsComponent,
     RouterSimulatorComponent,
-    CvDetailPageComponent
+    CvDetailPageComponent,
+    LoginFormComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { CvDetailPageComponent } from './components/cv-detail-page/cv-detail-pag
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

@@ -1,1 +1,17 @@
-<p>cv-detail-page works!</p>
+<div class="row">
+    <div class="col-5">
+        <img [src]="user.image|defaultImage" class="card-img-top" alt="...">
+    </div>
+
+    <div class="col-7">
+        <h2>{{user?.nom}} {{user?.prenom}}</h2>
+        <br> <span> {{user?.job}} </span>
+        <br> {{user?.motCles}}
+        <br> {{user?.citation}}<br>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="embaucher()">Embaucher</button>
+        <p> </p>
+
+    </div>
+
+</div>
