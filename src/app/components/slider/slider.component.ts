@@ -8,44 +8,37 @@ import { SliderService } from 'src/app/services/slider.service';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  private _mode$ : BehaviorSubject<String> = new BehaviorSubject("red");
-  public mode$ : Observable <String>;
-
-  constructor(private slider: SliderService) { 
-    const data$ = new Observable(observer => {
-
-      while(true) {
-      observer.next();
-    }
   
-  
-  })
-  data$.subscribe({
-    next: value => this._mode$,
-    error: err => console.error(err),
-    complete: () => console.log('DONE!')
-  }); 
-
-  }
+  monObservable$ : Observable<string>;
+    images=[
+      'amaniii.jpg',  
+      'arbia.jpg',
+      'fatma.jpg',
+      'nouha.jpg'
+    ];
+    image:String;
+  constructor(private slider: SliderService) { }
 
   ngOnInit() {
-    this.getMode$( );
-    console.log(this.mode$)
+    this.monObservable$ =new Observable( 
+      (observer)=>{
+        let i=0;
+        setInterval( 
+          ()=>{
+            console.log(i%this.images.length-1)
+            observer.next(this.images[(i%this.images.length)])
+            i++
+          }
+        ,1000)
+      }
+    );
+    this.monObservable$.subscribe(
+      (result)=>{
+        this.image=result;
+      }
+    )
 
   }
-  
-  public onColorsToggle( ) : void {
-    console.log("hui")
-
-    this.slider.toggleColors( );
-  
-  }
-  
-  private getMode$( ) : Observable<String> {
-  return this.mode$ = this.slider.mode$;
-  
-  }
-
 }
 
 

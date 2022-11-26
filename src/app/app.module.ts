@@ -56,7 +56,7 @@ import { SliderComponent } from './components/slider/slider.component';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [ItemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

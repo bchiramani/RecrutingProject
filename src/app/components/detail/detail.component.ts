@@ -5,20 +5,31 @@ import { User } from 'src/app/models/user.model';
 import { CvEmbauchesService } from 'src/app/services/cv-embauches.service';
 import { CvService } from 'src/app/services/cv.service';
 import Swal from 'sweetalert2'
+import { ItemComponent } from '../item/item.component';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  @Input() cvToDisplay:User
+  //@Input() cvToDisplay:User
+  cvToDisplay:User
   //const Swal = require('sweetalert2')
-  constructor(private router:Router,cvService:CvService,private cvEmbauchesService:CvEmbauchesService,private toastr: ToastrService) {
+  constructor(private router:Router,cvService:CvService,private cvEmbauchesService:CvEmbauchesService,private toastr: ToastrService, private item : ItemComponent) {
+    console.log("i am at detail");
     
+    
+    this.item.monObservable$.subscribe(
+      (result)=>{
+        console.log("hi amounty i am subscribed now ")
+        this.cvToDisplay=result;
+      }
+    )
    }
 
   ngOnInit() {
     
+
   
   }
   embaucher(){
